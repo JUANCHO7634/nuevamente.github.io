@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recursividad | Algoritmos</title>
+
+    <link rel="stylesheet" href="estile.css">
+</head>
+
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span>&lt;/&gt;</span> Recursividad
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#conceptos">Conceptos</a>
+            <a href="#algoritmos">Algoritmos</a>
+            <a href="#aplicaciones">Aplicaciones</a>
+            <a href="#conclusion">Conclusión</a>
+            <a href="#referencias">Referencias</a>
+        </nav>
+
+    </header>
+
+
+    <!-- INICIO -->
+    <section id="inicio" class="hero">
+
+        <div class="hero-text">
+
+            <p class="small-title">
+                ALGORITMOS Y CIENCIAS DE LA COMPUTACIÓN
+            </p>
+
+            <h1>Recursividad</h1>
+
+            <p>
+                La recursividad es una técnica de programación en la que
+                una función se llama a sí misma para resolver un problema,
+                dividiéndolo en problemas más pequeños.
+            </p>
+
+            <a href="#conceptos" class="button">
+                Explorar ahora
+            </a>
+
+        </div>
+
+
+        <div class="recursion-diagram">
+
+            <div class="function-box">función()</div>
+
+            <div class="arrow">↓</div>
+
+            <div class="function-box">función()</div>
+
+            <div class="arrow">↓</div>
+
+            <div class="function-box">función()</div>
+
+            <div class="return-box">
+                return resultado;
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONCEPTOS -->
+    <section id="conceptos" class="section">
+
+        <h2>Conceptos fundamentales</h2>
+
+        <p class="section-description">
+            La recursividad permite resolver problemas complejos mediante
+            llamadas repetidas a una misma función.
+        </p>
+
+
+        <div class="cards">
+
+            <article class="card">
+
+                <div class="icon">?</div>
+
+                <h3>¿Qué es la recursividad?</h3>
+
+                <p>
+                    Es una técnica donde una función se invoca a sí misma
+                    hasta alcanzar una condición que detiene el proceso.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="icon">⚙</div>
+
+                <h3>Procedimientos recursivos</h3>
+
+                <p>
+                    Son funciones que contienen una llamada a sí mismas.
+                    Se utilizan en árboles, búsqueda, ordenamiento,
+                    matemáticas y procesamiento de estructuras.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="icon">★</div>
+
+                <h3>Características</h3>
+
+                <p>
+                    Toda recursividad necesita un caso base y un caso
+                    recursivo que permita avanzar hacia la solución.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="icon">▮</div>
+
+                <h3>Complejidad computacional</h3>
+
+                <p>
+                    Los algoritmos recursivos pueden consumir tiempo y
+                    memoria dependiendo de la cantidad de llamadas
+                    realizadas.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROCEDIMIENTO -->
+    <section class="procedure">
+
+        <div>
+
+            <h2>¿Cómo funciona?</h2>
+
+            <p>
+                Un procedimiento recursivo divide un problema en partes
+                más pequeñas hasta llegar a un caso base.
+            </p>
+
+        </div>
+
+
+        <div class="process">
+
+            <div>
+                <strong>1</strong>
+                <span>Problema</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div>
+                <strong>2</strong>
+                <span>Llamada recursiva</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div>
+                <strong>3</strong>
+                <span>Caso base</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div>
+                <strong>4</strong>
+                <span>Resultado</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ALGORITMOS -->
+    <section id="algoritmos" class="section algorithms">
+
+        <h2>Algoritmos con Recursividad</h2>
+
+        <p class="section-description">
+            Ejemplos prácticos y funcionales de algoritmos que utilizan
+            recursividad.
+        </p>
+
+
+        <!-- =========================
+             FACTORIAL
+        ========================== -->
+
+        <article class="algorithm-card">
+
+            <div class="algorithm-info">
+
+                <span class="tag">MATEMÁTICAS</span>
+
+                <h3>Factorial</h3>
+
+                <p>
+                    El factorial de un número entero positivo se obtiene
+                    multiplicando ese número por todos los enteros positivos
+                    anteriores.
+                </p>
+
+                <div class="formula">
+                    n! = n × (n - 1)!
+                </div>
+
+                <p>
+                    Por ejemplo:
+                </p>
+
+                <div class="example">
+                    5! = 5 × 4 × 3 × 2 × 1 = 120
+                </div>
+
+            </div>
+
+
+            <div class="code-box">
+
+                <h4>Ejemplo funcional</h4>
+
+                <div class="input-area">
+
+                    <input
+                        type="number"
+                        id="factorialInput"
+                        min="0"
+                        max="20"
+                        value="5"
+                    >
+
+                    <button onclick="calcularFactorial()">
+                        Calcular
+                    </button>
+
+                </div>
+
+
+                <div id="factorialResult" class="result">
+                    Resultado: 120
+                </div>
+
+
+                <h4>Código Java</h4>
+
+<pre><code>public static int factorial(int n) {
+
+    if (n == 0) {
+        return 1;
+    }
+
+    return n * factorial(n - 1);
+}</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- =========================
+             FIBONACCI
+        ========================== -->
+
+        <article class="algorithm-card reverse">
+
+            <div class="algorithm-info">
+
+                <span class="tag">SECUENCIA</span>
+
+                <h3>Fibonacci</h3>
+
+                <p>
+                    La sucesión de Fibonacci se obtiene sumando los dos
+                    valores anteriores para obtener el siguiente.
+                </p>
+
+                <div class="formula">
+                    F(n) = F(n-1) + F(n-2)
+                </div>
+
+                <div class="example">
+                    0, 1, 1, 2, 3, 5, 8, 13...
+                </div>
+
+            </div>
+
+
+            <div class="code-box">
+
+                <h4>Ejemplo funcional</h4>
+
+                <div class="input-area">
+
+                    <input
+                        type="number"
+                        id="fibonacciInput"
+                        min="0"
+                        max="30"
+                        value="8"
+                    >
+
+                    <button onclick="calcularFibonacci()">
+                        Calcular
+                    </button>
+
+                </div>
+
+
+                <div id="fibonacciResult" class="result">
+                    Fibonacci(8) = 21
+                </div>
+
+
+                <h4>Código Java</h4>
+
+<pre><code>public static int fibonacci(int n) {
+
+    if (n <= 1) {
+        return n;
+    }
+
+    return fibonacci(n - 1)
+         + fibonacci(n - 2);
+}</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- =========================
+             TORRES DE HANOI
+        ========================== -->
+
+        <article class="algorithm-card">
+
+            <div class="algorithm-info">
+
+                <span class="tag">RECURSIVIDAD</span>
+
+                <h3>Torres de Hanói</h3>
+
+                <p>
+                    Es un problema clásico que consiste en mover una torre
+                    de discos desde una columna de origen hasta una columna
+                    destino utilizando una columna auxiliar.
+                </p>
+
+                <div class="formula">
+                    T(n) = 2T(n-1) + 1
+                </div>
+
+                <p>
+                    Nunca se puede colocar un disco grande sobre uno pequeño.
+                </p>
+
+                <div class="example">
+                    Para 3 discos se necesitan 7 movimientos.
+                </div>
+
+            </div>
+
+
+            <div class="code-box">
+
+                <h4>Ejemplo funcional</h4>
+
+                <div class="input-area">
+
+                    <input
+                        type="number"
+                        id="hanoiInput"
+                        min="1"
+                        max="6"
+                        value="3"
+                    >
+
+                    <button onclick="jugarHanoi()">
+                        Resolver
+                    </button>
+
+                </div>
+
+
+                <div id="hanoiResult" class="result">
+                    Movimientos:
+                </div>
+
+
+                <h4>Código Java</h4>
+
+<pre><code>public static void hanoi(
+    int n,
+    char origen,
+    char auxiliar,
+    char destino) {
+
+    if (n == 1) {
+
+        System.out.println(
+            origen + " -> " + destino
+        );
+
+        return;
+    }
+
+    hanoi(
+        n - 1,
+        origen,
+        destino,
+        auxiliar
+    );
+
+    System.out.println(
+        origen + " -> " + destino
+    );
+
+    hanoi(
+        n - 1,
+        auxiliar,
+        origen,
+        destino
+    );
+}</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- =========================
+             FRACTALES
+        ========================== -->
+
+        <article class="algorithm-card reverse">
+
+            <div class="algorithm-info">
+
+                <span class="tag">GRÁFICOS</span>
+
+                <h3>Fractales</h3>
+
+                <p>
+                    Los fractales son figuras que presentan patrones
+                    similares a diferentes escalas. Muchos pueden generarse
+                    mediante algoritmos recursivos.
+                </p>
+
+                <div class="example">
+                    Ejemplos: árbol fractal, triángulo de Sierpinski
+                    y conjunto de Mandelbrot.
+                </div>
+
+                <p>
+                    En este ejemplo se genera un árbol fractal mediante
+                    llamadas recursivas.
+                </p>
+
+            </div>
+
+
+            <div class="fractal-area">
+
+                <canvas id="fractalCanvas"></canvas>
+
+                <div class="fractal-controls">
+
+                    <label for="nivelFractal">
+                        Nivel:
+                    </label>
+
+                    <input
+                        type="number"
+                        id="nivelFractal"
+                        min="1"
+                        max="10"
+                        value="8"
+                    >
+
+                    <button onclick="dibujarFractal()">
+                        Generar fractal
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- APLICACIONES -->
+    <section id="aplicaciones" class="applications">
+
+        <h2>Aplicaciones de la recursividad</h2>
+
+        <div class="application-grid">
+
+            <div class="application">
+
+                <span>01</span>
+
+                <h3>Árboles</h3>
+
+                <p>
+                    Se utiliza para recorrer estructuras de datos
+                    jerárquicas.
+                </p>
+
+            </div>
+
+
+            <div class="application">
+
+                <span>02</span>
+
+                <h3>Búsqueda</h3>
+
+                <p>
+                    Permite recorrer diferentes niveles de estructuras
+                    para encontrar información.
+                </p>
+
+            </div>
+
+
+            <div class="application">
+
+                <span>03</span>
+
+                <h3>Ordenamiento</h3>
+
+                <p>
+                    Algoritmos como Merge Sort y Quick Sort utilizan
+                    estrategias recursivas.
+                </p>
+
+            </div>
+
+
+            <div class="application">
+
+                <span>04</span>
+
+                <h3>Gráficos</h3>
+
+                <p>
+                    Se puede utilizar para crear fractales y diferentes
+                    estructuras visuales.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONCLUSIÓN -->
+    <section id="conclusion" class="conclusion">
+
+        <div class="conclusion-icon">
+            ✓
+        </div>
+
+        <h2>Conclusión</h2>
+
+        <p>
+            La recursividad es una herramienta fundamental en las ciencias
+            computacionales porque permite solucionar problemas complejos
+            dividiéndolos en problemas más pequeños. Aunque puede requerir
+            mayor cantidad de memoria y tiempo en determinados casos, resulta
+            especialmente útil para trabajar con estructuras jerárquicas,
+            algoritmos matemáticos, búsqueda, ordenamiento y gráficos.
+        </p>
+
+        <p>
+            Comprender la recursividad permite desarrollar algoritmos más
+            organizados y facilita el análisis de diferentes problemas
+            computacionales.
+        </p>
+
+    </section>
+
+
+    <!-- REFERENCIAS -->
+    <section id="referencias" class="references">
+
+        <h2>Referencias IEEE</h2>
+
+        <ol>
+
+            <li>
+                T. H. Cormen, C. E. Leiserson, R. L. Rivest y C. Stein,
+                <i>Introduction to Algorithms</i>, 3rd ed.
+                MIT Press, 2009.
+            </li>
+
+            <li>
+                R. Sedgewick y K. Wayne,
+                <i>Algorithms</i>, 4th ed.
+                Addison-Wesley, 2011.
+            </li>
+
+            <li>
+                M. T. Goodrich, R. Tamassia y M. H. Goldwasser,
+                <i>Data Structures and Algorithms in Java</i>,
+                6th ed. Wiley, 2014.
+            </li>
+
+            <li>
+                Oracle,
+                "The Java Tutorials: Classes and Objects,"
+                Oracle Corporation.
+            </li>
+
+            <li>
+                D. E. Knuth,
+                <i>The Art of Computer Programming</i>,
+                vol. 1, 3rd ed. Addison-Wesley, 1997.
+            </li>
+
+            <li>
+                R. L. Graham, D. E. Knuth y O. Patashnik,
+                <i>Concrete Mathematics</i>, 2nd ed.
+                Addison-Wesley, 1994.
+            </li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div>
+
+            <strong>&lt;/&gt; Recursividad</strong>
+
+            <p>
+                Proyecto de Ciencias Computacionales
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <p>
+                Equipo de 5 integrantes
+            </p>
+
+            <p>
+                GitHub Pages · 2026
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>

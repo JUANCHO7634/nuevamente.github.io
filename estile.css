@@ -1,0 +1,577 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f5;
+    color: #26363a;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    height: 65px;
+    background: #17383d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #18aeb3;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar nav a {
+    color: #d8e6e7;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #20c3c3;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 390px;
+    background: linear-gradient(
+        120deg,
+        #087f86,
+        #149da1
+    );
+
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 60px 10%;
+}
+
+.hero-text {
+    max-width: 580px;
+}
+
+.small-title {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    color: #b9ffff;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 22px;
+    background: white;
+    color: #087f86;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* DIAGRAMA */
+
+.recursion-diagram {
+    width: 260px;
+    text-align: center;
+    position: relative;
+}
+
+.function-box {
+    display: inline-block;
+    background: #17383d;
+    border: 2px solid #76e4e4;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin: 5px;
+    font-family: monospace;
+}
+
+.arrow {
+    color: #8ffafa;
+}
+
+.return-box {
+    margin-top: 15px;
+    background: #0e5960;
+    padding: 12px;
+    border-radius: 5px;
+    font-family: monospace;
+}
+
+
+/* SECCIONES */
+
+.section {
+    padding: 65px 8%;
+}
+
+.section h2,
+.applications h2,
+.conclusion h2,
+.references h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #19383d;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    text-align: center;
+    color: #65777a;
+    margin-bottom: 40px;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 28px 22px;
+    border-radius: 4px;
+    border-top: 5px solid #159ca0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+}
+
+.card .icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #e1f3f3;
+    color: #087f86;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 17px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    color: #17383d;
+}
+
+.card p {
+    color: #66777a;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+
+/* PROCEDURE */
+
+.procedure {
+    background: #19383d;
+    color: white;
+    padding: 45px 8%;
+}
+
+.procedure h2 {
+    margin-bottom: 10px;
+}
+
+.procedure p {
+    color: #c6d9da;
+}
+
+.process {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.process div:not(.line) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.process strong {
+    background: #18aeb3;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.process span {
+    font-size: 13px;
+}
+
+.line {
+    width: 80px;
+    height: 2px;
+    background: #18aeb3;
+    margin: 0 10px;
+}
+
+
+/* ALGORITMOS */
+
+.algorithms {
+    background: #eef4f4;
+}
+
+.algorithm-card {
+    max-width: 1100px;
+    margin: 30px auto;
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 35px;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+}
+
+.algorithm-card.reverse {
+    grid-template-columns: 1fr 1fr;
+}
+
+.algorithm-info {
+    padding: 10px;
+}
+
+.tag {
+    display: inline-block;
+    background: #d8eeee;
+    color: #087f86;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+}
+
+.algorithm-info h3 {
+    font-size: 28px;
+    color: #17383d;
+    margin-bottom: 15px;
+}
+
+.algorithm-info p {
+    line-height: 1.7;
+    color: #5c6e70;
+}
+
+.formula {
+    background: #e9f4f4;
+    color: #087f86;
+    padding: 15px;
+    margin: 18px 0;
+    font-size: 20px;
+    font-family: monospace;
+    border-left: 4px solid #149da1;
+}
+
+.example {
+    background: #f5f7f7;
+    padding: 12px;
+    margin-top: 12px;
+    font-family: monospace;
+}
+
+
+/* CÓDIGO */
+
+.code-box {
+    background: #172f34;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.code-box h4 {
+    background: #0e5960;
+    color: white;
+    padding: 12px 17px;
+}
+
+pre {
+    padding: 20px;
+    overflow-x: auto;
+}
+
+code {
+    color: #b8eeee;
+    font-family: Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.code-box button,
+.fractal-area button {
+    background: #18aeb3;
+    border: none;
+    color: white;
+    padding: 11px 18px;
+    margin: 0 20px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.code-box button:hover,
+.fractal-area button:hover {
+    background: #087f86;
+}
+
+.result {
+    color: #9af4f4;
+    padding: 0 20px 20px;
+    font-weight: bold;
+}
+
+
+/* FRACTAL */
+
+.fractal-area {
+    background: #172f34;
+    border-radius: 5px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#fractalCanvas {
+    width: 100%;
+    max-width: 430px;
+    height: 300px;
+    background: #10272b;
+}
+
+
+/* APLICACIONES */
+
+.applications {
+    background: #17383d;
+    color: white;
+    padding: 70px 8%;
+}
+
+.applications h2 {
+    color: white;
+}
+
+.application-grid {
+    max-width: 1100px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.application {
+    border-top: 2px solid #18aeb3;
+    padding: 20px;
+}
+
+.application span {
+    color: #20c3c3;
+    font-size: 13px;
+}
+
+.application h3 {
+    margin: 12px 0;
+}
+
+.application p {
+    color: #bcd0d1;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+
+/* CONCLUSIÓN */
+
+.conclusion {
+    text-align: center;
+    padding: 70px 20%;
+    background: #edf4f4;
+}
+
+.conclusion-icon {
+    margin: auto;
+    margin-bottom: 20px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #18aeb3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.conclusion p {
+    color: #5d6f71;
+    line-height: 1.8;
+    margin-top: 15px;
+}
+
+
+/* REFERENCIAS */
+
+.references {
+    padding: 60px 10%;
+    background: #233a3e;
+    color: white;
+}
+
+.references h2 {
+    color: white;
+}
+
+.references ol {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.references li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #d3e0e0;
+    font-size: 14px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #10272b;
+    color: white;
+    padding: 30px 8%;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer strong {
+    color: #20c3c3;
+}
+
+footer p {
+    color: #9eafb0;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 18px;
+        gap: 15px;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .algorithm-card,
+    .algorithm-card.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .application-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .conclusion {
+        padding: 60px 10%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .application-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .line {
+        width: 2px;
+        height: 35px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+}
